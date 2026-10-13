@@ -67,6 +67,7 @@
     /* Intake Lead Card */
     .card-form { background: var(--surface); border: 1px solid var(--border); padding: 2.25rem; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01); border-top: 4px solid var(--accent); }
     .card-form h3 { font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; }
+    .card-form .hs-form-frame { width: 100%; }
     .card-form p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
     
     .form-group { margin-bottom: 1rem; }
@@ -184,69 +185,18 @@
       </div>
     </div>
 
-    <!-- Live Form Connected to Web3Forms -->
+    <!-- HubSpot Form: K&D Finance - Equipment Financing Quote -->
     <div class="card-form" id="apply">
       <h3>Ready To Move Forward?</h3>
       <p>Complete the intake below for swift credit evaluation and rate options.</p>
       
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="7d29b1e2-4ad6-457b-8a23-03da0f4512ae">
-        <input type="hidden" name="subject" value="New Equipment Quote Intake - FinancialKD.com">
-        <input type="hidden" name="from_name" value="K&D Finance Intake Desk">
-
-        <div class="row">
-          <div class="form-group">
-            <label for="company">Company Legal Name</label>
-            <input type="text" id="company" name="company_name" required placeholder="Business Name">
-          </div>
-          <div class="form-group">
-            <label for="tib">Time in Business</label>
-            <select id="tib" name="time_in_business">
-              <option value="6 to 24 Months">6–24 Months</option>
-              <option value="2+ Years" selected>2+ Years</option>
-              <option value="5+ Years">5+ Years</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group">
-            <label for="contact_name">Primary Contact</label>
-            <input type="text" id="contact_name" name="contact_name" required placeholder="Full Name">
-          </div>
-          <div class="form-group">
-            <label for="phone">Direct Phone</label>
-            <input type="tel" id="phone" name="phone" required placeholder="(813) 000-0000">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Business Email</label>
-          <input type="email" id="email" name="email" required placeholder="name@company.com">
-        </div>
-
-        <div class="row">
-          <div class="form-group">
-            <label for="amount">Equipment Cost ($)</label>
-            <input type="text" id="amount" name="amount_requested" required placeholder="$50,000">
-          </div>
-          <div class="form-group">
-            <label for="type">Source</label>
-            <select id="type" name="condition">
-              <option value="Dealer New">Dealer New</option>
-              <option value="Dealer Used" selected>Dealer Used</option>
-              <option value="Private / Auction">Private Party / Auction</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="equipment">Equipment Description</label>
-          <textarea id="equipment" name="equipment_specs" rows="2" placeholder="e.g. 2022 Kubota SVL75-2 Compact Track Loader or 20-ton Gooseneck Trailer"></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Submit Application</button>
-      </form>
+      <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+      <script>
+        hbspt.forms.create({
+          portalId: "247680179",
+          formId: "4ad02991-d1b2-428b-a29e-777f8dadef23"
+        });
+      </script>
     </div>
     </div>
     <div class="hero-controls">
