@@ -3,153 +3,377 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K&D Finance | Commercial Equipment Leasing & Financing</title>
+  <title>K&D Finance | Commercial Equipment Leasing & Financing Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0f172a;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
+      --primary: #0f172a;       /* Slate Charcoal */
+      --secondary: #1e293b;     /* Deep Slate */
+      --accent: #047857;        /* Commercial Emerald Green */
+      --accent-hover: #065f46;  /* Deep Forest Emerald */
+      --accent-light: #ecfdf5;  /* Emerald Tint */
+      --accent-border: #a7f3d0;
+      --bg-page: #f8fafc;       /* Clean Off-White */
+      --surface: #ffffff;       /* Pure White Card */
+      --text-main: #0f172a;
+      --text-muted: #64748b;
       --border: #e2e8f0;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.5; }
-    header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.35rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; }
+    body { background-color: var(--bg-page); color: var(--text-main); line-height: 1.6; }
+
+    /* Top Strip */
+    .top-strip { background: var(--primary); color: #cbd5e1; font-size: 0.85rem; padding: 0.55rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .top-strip a { color: #34d399; text-decoration: none; font-weight: 600; }
+    .top-strip a:hover { text-decoration: underline; }
+
+    /* Main Navigation */
+    header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .logo-badge { background: var(--accent); color: white; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 1rem; font-weight: 800; }
     .logo span { color: var(--accent); }
-    .hero { max-width: 900px; margin: 3rem auto 2rem; padding: 0 1.5rem; text-align: center; }
-    .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem; line-height: 1.2; }
-    .hero p { font-size: 1.15rem; color: var(--muted); margin-bottom: 1.5rem; }
-    .stats { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .stat-item { background: var(--surface); border: 1px solid var(--border); padding: 0.75rem 1.25rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; }
-    .stat-item span { color: var(--accent); }
+    nav a { color: var(--secondary); text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-left: 2rem; transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: white !important; padding: 0.65rem 1.4rem; border-radius: 6px; font-weight: 700; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--accent-hover); }
+
+    /* Hero Section with Split Intake Card */
+    .hero { max-width: 1240px; margin: 0 auto; padding: 3.5rem 1.5rem 3rem; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center; }
+    .badge { display: inline-block; background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1.25rem; }
+    .hero-content h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; color: var(--primary); margin-bottom: 1.25rem; letter-spacing: -1px; }
+    .hero-content h1 span { color: var(--accent); }
+    .hero-content p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
     
-    .grid { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
-    .card { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; }
-    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary); }
-    .card p { font-size: 0.9rem; color: var(--muted); }
+    .metrics { display: flex; gap: 2rem; margin-top: 1rem; }
+    .metric-item h4 { font-size: 1.75rem; font-weight: 800; color: var(--primary); }
+    .metric-item p { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
 
-    .form-container { max-width: 650px; margin: 3rem auto; background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-    .form-container h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .form-container p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
-    .form-group { margin-bottom: 1.2rem; }
-    label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text); }
-    input, select, textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; }
-    input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
-    .row { display: flex; gap: 1rem; }
+    /* Intake Lead Card */
+    .card-form { background: var(--surface); border: 1px solid var(--border); padding: 2.25rem; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01); border-top: 4px solid var(--accent); }
+    .card-form h3 { font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 0.25rem; }
+    .card-form p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    
+    .form-group { margin-bottom: 1rem; }
+    label { display: block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--secondary); margin-bottom: 0.35rem; }
+    input, select, textarea { width: 100%; padding: 0.75rem 0.9rem; background: var(--bg-page); border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; color: var(--text-main); font-weight: 500; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); background: #ffffff; box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15); }
+    .row { display: flex; gap: 0.85rem; }
     .row .form-group { flex: 1; }
-    button { width: 100%; padding: 0.9rem; background: var(--accent); color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-    button:hover { background: var(--accent-hover); }
+    .submit-btn { width: 100%; padding: 0.95rem; background: var(--accent); color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; letter-spacing: 0.5px; }
+    .submit-btn:hover { background: var(--accent-hover); }
 
-    footer { text-align: center; padding: 2.5rem 1rem; border-top: 1px solid var(--border); background: var(--surface); font-size: 0.85rem; color: var(--muted); margin-top: 3rem; }
+    /* Section 179 Banner */
+    .banner-179 { background: var(--primary); color: white; padding: 1.5rem 1rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .banner-179 p { font-size: 1.05rem; font-weight: 500; }
+    .banner-179 span { color: #34d399; font-weight: 800; }
+
+    /* 4-Pillar Features */
+    .section-wrap { max-width: 1240px; margin: 4.5rem auto; padding: 0 1.5rem; }
+    .section-header { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+    .section-header h2 { font-size: 2.25rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; letter-spacing: -0.5px; }
+    .section-header p { font-size: 1.05rem; color: var(--text-muted); }
+
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .pillar-card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; border-radius: 10px; transition: transform 0.2s, box-shadow 0.2s; }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.08); }
+    .pillar-num { font-size: 1.1rem; font-weight: 800; color: var(--accent); margin-bottom: 0.75rem; display: inline-block; }
+    .pillar-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 0.65rem; }
+    .pillar-card p { font-size: 0.92rem; color: var(--text-muted); }
+
+    /* Equipment Asset Classes with Real Stock Imagery */
+    .assets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .asset-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    .asset-card img { width: 100%; height: 185px; object-fit: cover; }
+    .asset-card-body { padding: 1.5rem; }
+    .asset-card-body h4 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem; }
+    .asset-card-body p { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* Qualifications Strip */
+    .qual-container { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2.75rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03); }
+    .qual-box h3 { font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 0.25rem; }
+    .qual-box p { font-size: 1rem; color: var(--primary); font-weight: 700; }
+    .qual-box span { font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.25rem; }
+
+    /* FAQ Accordion List */
+    .faq-wrap { max-width: 880px; margin: 4.5rem auto; padding: 0 1.5rem; }
+    .faq-block { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 1rem; padding: 1.35rem 1.65rem; }
+    .faq-block h4 { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .faq-block p { font-size: 0.92rem; color: var(--text-muted); }
+
+    /* Footer */
+    footer { background: var(--primary); color: #94a3b8; border-top: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; font-size: 0.88rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 0.75rem; }
+    footer a:hover { color: white; }
+    .footer-copy { margin-top: 1.5rem; font-size: 0.82rem; color: #64748b; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 2rem; }
+      .hero-content h1 { font-size: 2.3rem; }
+      nav a:not(.nav-cta) { display: none; }
+      .metrics { justify-content: space-between; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">K&D <span>FINANCE</span></div>
-    <div style="font-size: 0.9rem; font-weight: 600; color: var(--muted);">Direct Origination Desk</div>
-  </header>
-
-  <section class="hero">
-    <h1>Commercial Equipment Financing Built for Speed</h1>
-    <p>Application-only funding up to $150,000 with decisions in 4 to 24 hours. Preserve working capital while securing essential machinery and vocational assets.</p>
-    
-    <div class="stats">
-      <div class="stat-item">Approvals: <span>4–24 Hours</span></div>
-      <div class="stat-item">Credit Tiers: <span>A through C</span></div>
-      <div class="stat-item">App-Only: <span>Up to $150,000</span></div>
-    </div>
-  </section>
-
-  <section class="grid">
-    <div class="card">
-      <h3>Construction & Yellow Iron</h3>
-      <p>Skid steers, mini-excavators, wheel loaders, attachments, and utility equipment.</p>
-    </div>
-    <div class="card">
-      <h3>Titled Trucks & Trailers</h3>
-      <p>Dump trucks, flatbeds, heavy equipment trailers, goosenecks, and vocational rigs.</p>
-    </div>
-    <div class="card">
-      <h3>Manufacturing & Tooling</h3>
-      <p>CNC machining centers, press brakes, fiber lasers, benders, and fabrication machinery.</p>
-    </div>
-    <div class="card">
-      <h3>Commercial Landscaping & Tree Care</h3>
-      <p>Commercial zero-turns, wood chippers, stump grinders, bucket trucks, and hydroseeders.</p>
-    </div>
-  </section>
-
-  <div class="form-container" id="apply">
-    <h2>Submit an Equipment Quote</h2>
-    <p>Complete the intake form below to receive rates and term structures for your transaction.</p>
-    
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="7d29b1e2-4ad6-457b-8a23-03da0f4512ae">
-      <input type="hidden" name="subject" value="New Equipment Financing Intake - FinancialKD.com">
-      <input type="hidden" name="from_name" value="K&D Finance Portal">
-      
-      <div class="row">
-        <div class="form-group">
-          <label for="company">Company Legal Name</label>
-          <input type="text" id="company" name="company_name" required>
-        </div>
-        <div class="form-group">
-          <label for="tib">Time in Business</label>
-          <select id="tib" name="time_in_business">
-            <option value="Less than 2 Years">Less than 2 Years</option>
-            <option value="2+ Years" selected>2+ Years</option>
-            <option value="5+ Years">5+ Years</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group">
-          <label for="contact_name">Primary Contact Name</label>
-          <input type="text" id="contact_name" name="contact_name" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Direct Phone</label>
-          <input type="tel" id="phone" name="phone" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Business Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="row">
-        <div class="form-group">
-          <label for="amount">Estimated Equipment Cost ($)</label>
-          <input type="text" id="amount" name="amount_requested" placeholder="$45,000" required>
-        </div>
-        <div class="form-group">
-          <label for="type">Asset Condition</label>
-          <select id="type" name="condition">
-            <option value="Dealer New">Dealer New</option>
-            <option value="Dealer Used" selected>Dealer Used</option>
-            <option value="Private Party / Auction">Private Party / Auction</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="equipment">Equipment Description (Make / Model / Year)</label>
-        <textarea id="equipment" name="equipment_specs" rows="3" placeholder="e.g., 2021 Cat 259D3 Compact Track Loader"></textarea>
-      </div>
-
-      <button type="submit">Request Finance Terms</button>
-    </form>
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div>Direct Equipment Finance & Origination</div>
+    <div>Partner Inquiries: <a href="mailto:dloggins@financialkd.com">dloggins@financialkd.com</a></div>
   </div>
 
+  <!-- Main Navigation -->
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-badge">KD</div>
+      <div>K&D <span>FINANCE</span></div>
+    </a>
+    <nav>
+      <a href="#solutions">Solutions</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#qualifications">Qualifications</a>
+      <a href="#faq">FAQ</a>
+      <a href="#apply" class="nav-cta">Apply Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">Commercial Equipment Consulting</div>
+      <h1>Financing Today's <span>Equipment</span> For Tomorrow's Success.</h1>
+      <p>Equip your business for sustained growth without draining liquid reserves. Our commercial origination desk matches your operation with flexible machinery leasing and rapid application-only approvals.</p>
+      
+      <div class="metrics">
+        <div class="metric-item">
+          <h4>4–24 Hr</h4>
+          <p>Credit Turnaround</p>
+        </div>
+        <div class="metric-item">
+          <h4>Up to $150k</h4>
+          <p>Application-Only</p>
+        </div>
+        <div class="metric-item">
+          <h4>A through C</h4>
+          <p>Credit Tiers Accepted</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Form Connected to Web3Forms -->
+    <div class="card-form" id="apply">
+      <h3>Ready To Move Forward?</h3>
+      <p>Complete the intake below for swift credit evaluation and rate options.</p>
+      
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="7d29b1e2-4ad6-457b-8a23-03da0f4512ae">
+        <input type="hidden" name="subject" value="New Equipment Quote Intake - FinancialKD.com">
+        <input type="hidden" name="from_name" value="K&D Finance Intake Desk">
+
+        <div class="row">
+          <div class="form-group">
+            <label for="company">Company Legal Name</label>
+            <input type="text" id="company" name="company_name" required placeholder="Business Name">
+          </div>
+          <div class="form-group">
+            <label for="tib">Time in Business</label>
+            <select id="tib" name="time_in_business">
+              <option value="6 to 24 Months">6–24 Months</option>
+              <option value="2+ Years" selected>2+ Years</option>
+              <option value="5+ Years">5+ Years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="contact_name">Primary Contact</label>
+            <input type="text" id="contact_name" name="contact_name" required placeholder="Full Name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Direct Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(813) 000-0000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Business Email</label>
+          <input type="email" id="email" name="email" required placeholder="name@company.com">
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label for="amount">Equipment Cost ($)</label>
+            <input type="text" id="amount" name="amount_requested" required placeholder="$50,000">
+          </div>
+          <div class="form-group">
+            <label for="type">Source</label>
+            <select id="type" name="condition">
+              <option value="Dealer New">Dealer New</option>
+              <option value="Dealer Used" selected>Dealer Used</option>
+              <option value="Private / Auction">Private Party / Auction</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="equipment">Equipment Description</label>
+          <textarea id="equipment" name="equipment_specs" rows="2" placeholder="e.g. 2022 Kubota SVL75-2 Compact Track Loader or 20-ton Gooseneck Trailer"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Application</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Section 179 Banner -->
+  <div class="banner-179">
+    <p>⚡ <strong>New Equipment Today. Full Write-off This Year:</strong> Finance new or used equipment and leverage <span>Section 179</span> for up to a 100% tax deduction while conserving working capital.</p>
+  </div>
+
+  <!-- 4 Pillars Section (Modeled after TCEC) -->
+  <section class="section-wrap" id="solutions">
+    <div class="section-header">
+      <h2>Equipment Financing Built For Your Operation</h2>
+      <p>Having the right tools shouldn't depend on emptying your bank accounts. Our consultation desk secures the financing structure best suited for your business.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-num">01</span>
+        <h3>Up to $150,000 App-Only</h3>
+        <p>Get up to $150,000 for mission-critical equipment with standard bank statements and a one-page application—no multi-year tax returns required.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">02</span>
+        <h3>Improve Efficiency</h3>
+        <p>Help your operations run smoother with reliable machinery while keeping liquid working capital available to fund payroll, materials, and jobs.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">03</span>
+        <h3>Zero Asset Limitations</h3>
+        <p>Lease or finance almost any type of new or pre-owned equipment. Sourcing through franchised dealers, private parties, or auctions is fully supported.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">04</span>
+        <h3>Quick, Painless Process</h3>
+        <p>Get approvals fast so you can secure high-demand equipment before someone else does. Flexible monthly and seasonal terms available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commercial Asset Showcase with Stock Photos -->
+  <section class="section-wrap" id="equipment">
+    <div class="section-header">
+      <h2>Commercial Equipment We Finance</h2>
+      <p>Flexible leasing and funding structures across critical trade and industrial sectors.</p>
+    </div>
+
+    <div class="assets-grid">
+      <div class="asset-card">
+        <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=700&q=80" alt="Construction & Earthmoving Equipment">
+        <div class="asset-card-body">
+          <h4>Earthmoving & Yellow Iron</h4>
+          <p>Skid steers, compact track loaders, mini-excavators, wheel loaders, and specialized hydraulic attachments.</p>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=700&q=80" alt="Commercial Trucks & Trailers">
+        <div class="asset-card-body">
+          <h4>Vocational Trucks & Trailers</h4>
+          <p>Dump trucks, goosenecks, equipment flatbeds, service bodies, and heavy haulers essential to job-site mobility.</p>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=700&q=80" alt="Manufacturing & Tooling Machinery">
+        <div class="asset-card-body">
+          <h4>Machining & Metal Fabrication</h4>
+          <p>CNC machining centers, press brakes, ironworkers, plate rolls, fiber lasers, and heavy industrial tooling.</p>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=700&q=80" alt="Tree Care & Landscaping Gear">
+        <div class="asset-card-body">
+          <h4>Tree Care & Curbing Machinery</h4>
+          <p>Commercial zero-turns, wood chippers, curb machines, stump grinders, hydroseeders, and bucket trucks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualifications Strip (Modeled after TCEC) -->
+  <section class="section-wrap" id="qualifications">
+    <div class="qual-container">
+      <div class="qual-box">
+        <h3>6+ Months</h3>
+        <p>In Business</p>
+        <span>Verifiable commercial operating history</span>
+      </div>
+      <div class="qual-box">
+        <h3>A to C</h3>
+        <p>Credit Profiles</p>
+        <span>Solutions for prime and credit-rebuilding</span>
+      </div>
+      <div class="qual-box">
+        <h3>Equipment Quote</h3>
+        <p>From Vendor or Private Seller</p>
+        <span>Spec sheet, invoice, or bill of sale</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Modeled after TCEC) -->
+  <section class="faq-wrap" id="faq">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+      <p>Direct answers regarding rates, terms, and approval guidelines.</p>
+    </div>
+
+    <div class="faq-block">
+      <h4>What is equipment financing?</h4>
+      <p>Equipment financing allows businesses to acquire necessary machinery without paying the entire purchase price upfront. A lender provides capital to purchase the asset, and the business repays the principal and interest over scheduled monthly terms.</p>
+    </div>
+
+    <div class="faq-block">
+      <h4>How does equipment financing work?</h4>
+      <p>You select the desired machine from any dealer or private party and submit a quote or invoice. Once approved, the lender disburses purchase funds directly to the equipment vendor, and you take immediate possession while repaying across agreed installments.</p>
+    </div>
+
+    <div class="faq-block">
+      <h4>What types of equipment can be financed?</h4>
+      <p>Any revenue-generating commercial equipment: yellow iron, titled vocational trucks, trailers, machine tooling, curb systems, and commercial landscaping equipment can be funded.</p>
+    </div>
+
+    <div class="faq-block">
+      <h4>What happens at the end of the financing term?</h4>
+      <p>Depending on your contract structure, you can execute a $1 buyout option to own the equipment outright, refinance into extended terms, or return the machinery for an updated unit.</p>
+    </div>
+
+    <div class="faq-block">
+      <h4>Is financing available for younger businesses or startups?</h4>
+      <p>Yes. Businesses with 6+ months of history can qualify for application-only tiers. We evaluate business cash flow and equipment collateral value rather than solely personal credit scores.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 K&D Finance. Commercial equipment leasing and finance facilitation. Operating at FinancialKD.com.</p>
+    <p><strong>K&D Finance</strong> | Commercial Equipment Leasing & Capital Consulting</p>
+    <p style="margin: 0.75rem 0;">
+      <a href="#solutions">Solutions</a> &bull; 
+      <a href="#equipment">Equipment</a> &bull; 
+      <a href="#qualifications">Qualifications</a> &bull; 
+      <a href="#apply">Apply</a>
+    </p>
+    <div class="footer-copy">
+      &copy; 2026 K&D Finance. Commercial equipment leasing and finance facilitation. Operating at FinancialKD.com.<br>
+      Direct desk inquiries: dloggins@financialkd.com
+    </div>
   </footer>
 
 </body>
