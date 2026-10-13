@@ -51,16 +51,16 @@
 
   <header>
     <div class="logo">K&D <span>FINANCE</span></div>
-    <div style="font-size: 0.9rem; font-weight: 600; color: var(--muted);">Desk: (Direct Origination)</div>
+    <div style="font-size: 0.9rem; font-weight: 600; color: var(--muted);">Direct Origination Desk</div>
   </header>
 
   <section class="hero">
     <h1>Commercial Equipment Financing Built for Speed</h1>
-    <p>Application-only funding up to $150,000 with decisions in 4 to 24 hours. Preserve your working capital while securing the machinery your business needs.</p>
+    <p>Application-only funding up to $150,000 with decisions in 4 to 24 hours. Preserve working capital while securing essential machinery and vocational assets.</p>
     
     <div class="stats">
       <div class="stat-item">Approvals: <span>4–24 Hours</span></div>
-      <div class="stat-item">Tiers: <span>A through C Credit</span></div>
+      <div class="stat-item">Credit Tiers: <span>A through C</span></div>
       <div class="stat-item">App-Only: <span>Up to $150,000</span></div>
     </div>
   </section>
@@ -68,29 +68,30 @@
   <section class="grid">
     <div class="card">
       <h3>Construction & Yellow Iron</h3>
-      <p>Skid steers, mini-excavators, loaders, attachments, and site utility machinery.</p>
+      <p>Skid steers, mini-excavators, wheel loaders, attachments, and utility equipment.</p>
     </div>
     <div class="card">
       <h3>Titled Trucks & Trailers</h3>
-      <p>Dump trucks, goosenecks, equipment flatbeds, service bodies, and haulers.</p>
+      <p>Dump trucks, flatbeds, heavy equipment trailers, goosenecks, and vocational rigs.</p>
     </div>
     <div class="card">
       <h3>Manufacturing & Tooling</h3>
-      <p>CNC mills, press brakes, fiber lasers, welding rigs, and industrial equipment.</p>
+      <p>CNC machining centers, press brakes, fiber lasers, benders, and fabrication machinery.</p>
     </div>
     <div class="card">
-      <h3>Landscaping & Tree Care</h3>
-      <p>Commercial zero-turns, wood chippers, stump grinders, and hydroseeders.</p>
+      <h3>Commercial Landscaping & Tree Care</h3>
+      <p>Commercial zero-turns, wood chippers, stump grinders, bucket trucks, and hydroseeders.</p>
     </div>
   </section>
 
   <div class="form-container" id="apply">
     <h2>Submit an Equipment Quote</h2>
-    <p>Complete the intake below. We will review your specs and contact you with rate options within one business day.</p>
+    <p>Complete the intake form below to receive rates and term structures for your transaction.</p>
     
-    <!-- Replace YOUR_FORM_ENDPOINT with Formspree or Web3Forms free URL -->
     <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="access_key" value="7d29b1e2-4ad6-457b-8a23-03da0f4512ae">
+      <input type="hidden" name="subject" value="New Equipment Financing Intake - FinancialKD.com">
+      <input type="hidden" name="from_name" value="K&D Finance Portal">
       
       <div class="row">
         <div class="form-group">
@@ -100,9 +101,9 @@
         <div class="form-group">
           <label for="tib">Time in Business</label>
           <select id="tib" name="time_in_business">
-            <option value="startup">Less than 2 Years</option>
-            <option value="2plus" selected>2+ Years</option>
-            <option value="5plus">5+ Years</option>
+            <option value="Less than 2 Years">Less than 2 Years</option>
+            <option value="2+ Years" selected>2+ Years</option>
+            <option value="5+ Years">5+ Years</option>
           </select>
         </div>
       </div>
@@ -131,16 +132,16 @@
         <div class="form-group">
           <label for="type">Asset Condition</label>
           <select id="type" name="condition">
-            <option value="dealer_new">Dealer New</option>
-            <option value="dealer_used" selected>Dealer Used</option>
-            <option value="private_party">Private Party / Auction</option>
+            <option value="Dealer New">Dealer New</option>
+            <option value="Dealer Used" selected>Dealer Used</option>
+            <option value="Private Party / Auction">Private Party / Auction</option>
           </select>
         </div>
       </div>
 
       <div class="form-group">
         <label for="equipment">Equipment Description (Make / Model / Year)</label>
-        <textarea id="equipment" name="equipment_specs" rows="3" placeholder="e.g. 2021 Cat 259D3 Compact Track Loader"></textarea>
+        <textarea id="equipment" name="equipment_specs" rows="3" placeholder="e.g., 2021 Cat 259D3 Compact Track Loader"></textarea>
       </div>
 
       <button type="submit">Request Finance Terms</button>
